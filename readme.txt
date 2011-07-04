@@ -1,4 +1,4 @@
-=== Cyr-To-Lat ===
+=== Cyr to Lat enhanced ===
 Contributors: Atrax, SergeyBiryukov, karevn
 Tags: cyrillic, latin, l10n, russian, rustolat, slugs, translations, transliteration, media
 Requires at least: 2.3
