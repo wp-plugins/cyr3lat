@@ -11,6 +11,8 @@ Converts Cyrillic characters in post, page and term slugs to Latin characters.
 
 Converts Cyrillic characters in post, page and term slugs to Latin characters. Useful for creating human-readable URLs.
 
+This plugin is a fork of [cyr2lat](http://wordpress.org/extend/plugins/cyr2lat/) plugin.
+
 = Features =
 * Automatically converts existing post, page and term slugs on activation
 * Saves existing post and page permalinks integrity
@@ -40,6 +42,8 @@ add_filter('ctl_table', 'my_cyr_to_lat_table');
 `
 
 == Changelog ==
+
+= 3.3 =
 
 = 3.2 =
 * Added transliteration when publishing via XML-RPC
