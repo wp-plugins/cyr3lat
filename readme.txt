@@ -1,15 +1,15 @@
 === Cyr to Lat enhanced ===
 Contributors: Atrax, SergeyBiryukov, karevn
-Tags: cyrillic, latin, l10n, russian, rustolat, slugs, translations, transliteration, media
+Tags: cyrillic, latin, l10n, russian, rustolat, slugs, translations, transliteration, media, georgian
 Requires at least: 2.3
 Tested up to: 3.2
 Stable tag: 3.3.1
 
-Converts Cyrillic characters in post, page and term slugs to Latin characters.
+Converts Cyrillic and Georgian characters in post, page and term slugs to Latin characters.
 
 == Description ==
 
-Converts Cyrillic characters in post, page and term slugs to Latin characters. Useful for creating human-readable URLs.
+Converts Cyrillic and Georgian characters in post, page and term slugs to Latin characters. Useful for creating human-readable URLs.
 
 This plugin is a fork of [cyr2lat](http://wordpress.org/extend/plugins/cyr2lat/) plugin.
 
