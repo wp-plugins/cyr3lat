@@ -3,7 +3,7 @@ Contributors: Atrax, SergeyBiryukov, karevn
 Tags: cyrillic, latin, l10n, russian, rustolat, slugs, translations, transliteration, media
 Requires at least: 2.3
 Tested up to: 3.2
-Stable tag: 3.3
+Stable tag: 3.3.1
 
 Converts Cyrillic characters in post, page and term slugs to Latin characters.
 
@@ -42,6 +42,10 @@ add_filter('ctl_table', 'my_cyr_to_lat_table');
 `
 
 == Changelog ==
+
+= 3.3.1 =
+* Added Georgian transliteration table
+* A problem with some letters causing apostrophes in slugs was resolved
 
 = 3.3 =
 

@@ -3,9 +3,9 @@
 Plugin Name: Cyr to Lat enhanced
 Plugin URI: http://wordpress.org/extend/plugins/cyr3lat/
 Description: Converts Cyrillic characters in post, term slugs and media file names to Latin characters. Useful for creating human-readable URLs. Based on the original plugin by Anton Skorobogatov.
-Author: Sol, Sergey Biryukov, Nikolay Karev
+Author: Sol, Sergey Biryukov, Nikolay Karev, Dmitri Gogelia
 Author URI: http://karevn.com/
-Version: 3.3
+Version: 3.3.1
 */ 
 
 function ctl_sanitize_title($title) {
@@ -30,7 +30,16 @@ function ctl_sanitize_title($title) {
 		'у' => 'u', 'ў' => 'u`', 'ф' => 'f', 'х' => 'h', 'ц' => 'ts',
 		'ч' => 'ch', 'џ' => 'dh', 'ш' => 'sh', 'щ' => 'shh', 'ъ' => '``',
 		'ы' => 'y`', 'ь' => '`', 'э' => 'e`', 'ю' => 'yu', 'я' => 'ya'
-	);	
+	);
+	$geo2lat = array(
+		'ა' => 'a', 'ბ' => 'b', 'გ' => 'g', 'დ' => 'd', 'ე' => 'e', 'ვ' => 'v',
+		'ზ' => 'z', 'თ' => 'th', 'ი' => 'i', 'კ' => 'k', 'ლ' => 'l', 'მ' => 'm',
+		'ნ' => 'n', 'ო' => 'o', 'პ' => 'p','ჟ' => 'zh','რ' => 'r','ს' => 's',
+		'ტ' => 't','უ' => 'u','ფ' => 'ph','ქ' => 'q','ღ' => 'gh','ყ' => 'qh',
+		'შ' => 'sh','ჩ' => 'ch','ც' => 'ts','ძ' => 'dz','წ' => 'ts','ჭ' => 'tch',
+		'ხ' => 'kh','ჯ' => 'j','ჰ' => 'h'
+	);
+	$iso9_table = array_merge($iso9_table, $geo2lat);
 
 	$locale = get_locale();
 	switch ( $locale ) {
@@ -58,7 +67,7 @@ function ctl_sanitize_title($title) {
 	$term = $is_term ? $wpdb->get_var("SELECT slug FROM {$wpdb->terms} WHERE name = '$title'") : '';
 	if ( empty($term) ) {
 		$title = strtr($title, apply_filters('ctl_table', $iso9_table));
-		$title = preg_replace("/[^A-Za-z0-9`'_\-\.]/", '-', $title);
+		$title = preg_replace("/[^A-Za-z0-9'_\-\.]/", '-', $title);
 		$title = preg_replace('/\-+/', '-', $title);
 		$title = preg_replace('/^-+/', '', $title);
 		$title = preg_replace('/-+$/', '', $title);
