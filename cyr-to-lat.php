@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cyr to Lat enhanced
 Plugin URI: http://wordpress.org/extend/plugins/cyr3lat/
-Description: Converts Cyrillic and Georgian characters in post, term slugs and media file names to Latin characters. Useful for creating human-readable URLs. Based on the original plugin by Anton Skorobogatov.
+Description: Converts Cyrillic, European and Georgian characters in post, term slugs and media file names to Latin characters. Useful for creating human-readable URLs. Based on the original plugin by Anton Skorobogatov.
 Author: Sol, Sergey Biryukov, Nikolay Karev, Dmitri Gogelia
 Author URI: http://karevn.com/
 Version: 3.3.1
@@ -67,6 +67,9 @@ function ctl_sanitize_title($title) {
 	$term = $is_term ? $wpdb->get_var("SELECT slug FROM {$wpdb->terms} WHERE name = '$title'") : '';
 	if ( empty($term) ) {
 		$title = strtr($title, apply_filters('ctl_table', $iso9_table));
+		if (function_exists('iconv')){
+			$title = iconv('UTF-8', 'UTF-8//TRANSLIT//IGNORE', $title);
+		}
 		$title = preg_replace("/[^A-Za-z0-9'_\-\.]/", '-', $title);
 		$title = preg_replace('/\-+/', '-', $title);
 		$title = preg_replace('/^-+/', '', $title);
