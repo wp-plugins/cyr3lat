@@ -2,8 +2,8 @@
 Contributors: Atrax, SergeyBiryukov, karevn
 Tags: cyrillic, latin, l10n, russian, rustolat, slugs, translations, transliteration, media, georgian, european, diacritics
 Requires at least: 2.3
-Tested up to: 3.2
-Stable tag: 3.3.2
+Tested up to: 3.4.1
+Stable tag: 3.3.3
 
 Converts Cyrillic, European and Georgian characters in post, page and term slugs to Latin characters.
 
@@ -44,6 +44,8 @@ add_filter('ctl_table', 'my_cyr_to_lat_table');
 
 == Changelog ==
 
+= 3.3.3 =
+* Bugfix: posts of status "future" were not affected.
 = 3.3.2 =
 * Added support for European diacritics
 
