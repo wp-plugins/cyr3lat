@@ -47,6 +47,9 @@ add_filter('ctl_table', 'my_cyr_to_lat_table');
 = 3.4 =
 * Fixes for Ukrainian characters
 
+= 3.3.3 =
+* Bugfix: posts of status "future" were not affected
+
 = 3.3.2 =
 * Added support for European diacritics
 
