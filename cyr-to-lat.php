@@ -50,10 +50,8 @@ function ctl_sanitize_title($title) {
 			$iso9_table['ъ'] = 'a';
 			break;
 		case 'uk':
-			$iso9_table['И'] = 'Y';
-			$iso9_table['и'] = 'y';
-			break;
 		case 'uk_ua':
+		case 'uk_UA':
 			$iso9_table['И'] = 'Y';
 			$iso9_table['и'] = 'y';
 			break;
